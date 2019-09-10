@@ -16,7 +16,6 @@ $(document).keydown(function(event) {
 });
 
 
-
 //This function detects user click on the button
 //Using event listener to capture which button is been click by storing the id
 $(".btn").on("click", function() {
