@@ -15,9 +15,8 @@ $(document).keydown(function(event) {
   }
 });
 
-//Detecting a key pressed to start a game
-$(document).click(function(event) {
-  //If game has not started after a key is press, make the game start and activate the next sequence.
+window.addEventListener('touchstart', function() {
+  // the user touched the screen!
   if (!started) {
     nextSequence();
     started = true;
