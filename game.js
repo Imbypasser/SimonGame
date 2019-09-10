@@ -15,22 +15,34 @@ $(document).keydown(function(event) {
   }
 });
 
+//Detecting a key pressed to start a game
+$(document).click(function(event) {
+  //If game has not started after a key is press, make the game start and activate the next sequence.
+  if (!started) {
+    nextSequence();
+    started = true;
+  }
+});
+
 
 //This function detects user click on the button
 //Using event listener to capture which button is been click by storing the id
 $(".btn").on("click", function() {
-  var userChosenColour = $(this).attr("id");
-  //Adding the color into an array to store the pattern
-  userClickedPattern.push(userChosenColour);
+  if(start === true){
+    var userChosenColour = $(this).attr("id");
+    //Adding the color into an array to store the pattern
+    userClickedPattern.push(userChosenColour);
 
-  //Adding sounds
-  playSound(userChosenColour);
+    //Adding sounds
+    playSound(userChosenColour);
 
-  //Adding animation
-  animatePress(userChosenColour);
+    //Adding animation
+    animatePress(userChosenColour);
 
-  var lastIndex = userClickedPattern.length - 1;
-  checkAnswer(lastIndex);
+    var lastIndex = userClickedPattern.length - 1;
+    checkAnswer(lastIndex);
+  }
+
 });
 
 
