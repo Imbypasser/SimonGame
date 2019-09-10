@@ -19,21 +19,18 @@ $(document).keydown(function(event) {
 //This function detects user click on the button
 //Using event listener to capture which button is been click by storing the id
 $(".btn").on("click", function() {
-  if(start === true){
-    var userChosenColour = $(this).attr("id");
-    //Adding the color into an array to store the pattern
-    userClickedPattern.push(userChosenColour);
+  var userChosenColour = $(this).attr("id");
+  //Adding the color into an array to store the pattern
+  userClickedPattern.push(userChosenColour);
 
-    //Adding sounds
-    playSound(userChosenColour);
+  //Adding sounds
+  playSound(userChosenColour);
 
-    //Adding animation
-    animatePress(userChosenColour);
+  //Adding animation
+  animatePress(userChosenColour);
 
-    var lastIndex = userClickedPattern.length - 1;
-    checkAnswer(lastIndex);
-  }
-
+  var lastIndex = userClickedPattern.length - 1;
+  checkAnswer(lastIndex);
 });
 
 
